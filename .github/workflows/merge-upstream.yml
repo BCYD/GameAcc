@@ -46,6 +46,8 @@ jobs:
         git submodule update --remote 
         git add . 
         git commit -m "更新软件"
+        git push origin maser
+        git clone --recursive https://github.com/BCYD/GameAcc.git
     - name: update
       run : |
         if [ -f ./.git/MERGE_MSG ]; then
