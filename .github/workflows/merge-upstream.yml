@@ -47,8 +47,6 @@ jobs:
         git branch newbranch
         git checkout newbranch
         git submodule update --remote 
-    - name: Apply commit changes
-      run : |
         git add .
         if [ -n "git status" ];  then  
         git commit -m "更新软件"
