@@ -50,7 +50,7 @@ jobs:
         git commit -m "更新软件"
         git checkout master
         git merge newBranch
-        git push origin maser
+        git pull --rebase origin master
         git clone --recursive https://github.com/BCYD/GameAcc.git
     - name: update
       run : |
