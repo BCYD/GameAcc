@@ -49,13 +49,13 @@ jobs:
         git submodule update --remote 
         git add . 
         if [ -a "git status" ];  then
-        echo "There is no merge commits."
-        else
         git commit -m "更新软件"
         git checkout master
         git merge newbranch
         git remote set-url origin git@github.com:BCYD/GameAcc.git
-        fi
+        else
+        echo "There is no merge commits."
+        fi        
         
     - name: Push Commits
       env:
