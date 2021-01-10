@@ -48,13 +48,13 @@ jobs:
         git checkout newbranch
         git submodule update --remote 
         git add .
-        if [ -n "git status" ];  then  
+        if [ -n "git status" ];  then
+        echo "There is no merge commits."
+        else
         git commit -m "更新软件"
         git checkout master
         git merge newbranch
         git remote set-url origin git@github.com:BCYD/GameAcc.git
-        else
-        echo "There is no merge commits."
         fi
         
     - name: Push Commitsy
