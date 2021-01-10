@@ -33,14 +33,14 @@ jobs:
 
     - name: Set git identity
       run : |
-        git config --global user.email "461872470@qq.com"
-        git config --global user.name "BCYDTZ"
+        git config --global user.email "461872470@163.com"
+        git config --global user.name "BCYD"
     - name: Install SSH Client
       uses: webfactory/ssh-agent@v0.4.1
       with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }} 
     - name: Load upstream commits
-      run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
+      run: git clone --recursive https://github.com/BCYD/GameAcc.git
     - name: update
       run : |
         cd GameAcc
@@ -48,8 +48,18 @@ jobs:
         git checkout newbranch
         git submodule update --remote
         git add . 
+    - name: Apply commit changes
+      run : |
+        if [ -n "git status" ];  then  
         git commit -m "更新软件"
         git checkout master
         git merge newbranch
-        git remote set-url origin git@github.com:BCYDTZ/GameAcc.git
-        git push origin master
+        git remote set-url origin git@github.com:BCYD/GameAcc.git
+        else
+        echo "There is no merge commits."
+        fi
+        
+    - name: Push Commits
+      env:
+        DOWNSTREAM_BRANCH: master
+      run: git push origin $DOWNSTREAM_BRANCH   
