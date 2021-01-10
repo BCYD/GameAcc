@@ -47,7 +47,7 @@ jobs:
         git submodule update --remote 
         git add . 
         if [ -a "git status" ];  then
-        git commit -m "更新件"
+        git commit -m "更新软件"
         git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin master
         else
