@@ -57,8 +57,6 @@ jobs:
         fi        
         
     - name: Push Commits
-      env:
-        DOWNSTREAM_BRANCH: master
       run : |
         git remote set-url origin git@github.com:BCYD/GameAcc.git
-        git push origin $DOWNSTREAM_BRANCH   
+        git push origin master   
