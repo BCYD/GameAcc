@@ -69,4 +69,6 @@ jobs:
       env:
         DOWNSTREAM_BRANCH: master
       run : | 
+        git pull --rebase origin master
+        git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin $DOWNSTREAM_BRANCH
