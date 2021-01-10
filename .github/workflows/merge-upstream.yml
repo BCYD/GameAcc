@@ -43,9 +43,9 @@ jobs:
       run : | 
         git clone --recursive https://github.com/BCYD/GameAcc.git
         cd GameAcc
-        git submodule update --remote 
         git branch newBranch
         git checkout newBranch
+        git submodule update --remote 
         git add . 
         git commit -m "更新软件"
         git checkout master
