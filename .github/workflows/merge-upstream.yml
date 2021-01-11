@@ -46,7 +46,7 @@ jobs:
         git branch newBranch
         git branch
         git checkout newBranch
-        STRING=git submodule update --remote
+        STRING=`git submodule update --remote`
         if [ -n "$STRING" ]; then 
         echo "There is no merge commits."
         fi
