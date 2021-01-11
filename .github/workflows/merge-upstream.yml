@@ -43,8 +43,8 @@ jobs:
       run : | 
         git clone --recursive https://github.com/BCYD/GameAcc.git
         cd GameAcc
-        rm -rf GameAcc
         git branch newBranch
+        git branch
         git checkout newBranch
         branch="git submodule update --remote"
         if [ -n "branch" ]; then 
