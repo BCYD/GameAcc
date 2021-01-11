@@ -48,6 +48,8 @@ jobs:
         git checkout newBranch
         branch="git submodule update --remote"
         if [ -n "branch" ]; then 
+        echo "There is no merge commits."
+        fi
         git add .
         git commit -m "更新软件"
         git checkout master
@@ -55,8 +57,6 @@ jobs:
         git pull --rebase origin master
         git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin master
-        fi
-        echo "There is no merge commits."
     - name: update
       run : |
         if [ -f ./.git/MERGE_MSG ]; then
