@@ -47,7 +47,7 @@ jobs:
         git branch
         git checkout newBranch
         git submodule update --remote
-        if [ `echo ${VAR} | awk -v tem="git submodule update --remote" '{print($1>tem)? "1":"0"}'` -eq "0" ]; then 
+        if [ `echo ${VAR} | awk -v tem="git submodule update --remote" '{print($1>tem)? "1":"0"}'` --ne "0" ]; then 
         echo "There is no merge commits."
         else
         git add .
