@@ -50,13 +50,13 @@ jobs:
         git add . 
         git commit -m "更新软件"
         if [ -n "git status" ]; then
+        echo "There is no merge commits."
+        else
         git checkout master
         git merge newBranch
         git pull --rebase origin master
         git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin master
-        else
-        echo "There is no merge commits."
         fi
     - name: update
       run : |
