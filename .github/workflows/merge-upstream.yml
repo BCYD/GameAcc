@@ -46,10 +46,9 @@ jobs:
         rm -rf GameAcc
         git branch newBranch
         git checkout newBranch
-        git submodule update --remote 
+        branch="git submodule update --remote"
+        if [ -n "branch" ]; then 
         git add .
-        branch="git status"
-        if [ -n "branch" ]; then
         git commit -m "更新软件"
         git checkout master
         git merge newBranch
