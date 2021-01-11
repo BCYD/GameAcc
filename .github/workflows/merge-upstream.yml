@@ -48,7 +48,8 @@ jobs:
         git checkout newBranch
         git submodule update --remote 
         git add .
-        if [ -n "git status" ]; then
+        branch="git status"
+        if [ -n "branch" ]; then
         echo "There is no merge commits."
         else
         git commit -m "更新软件"
