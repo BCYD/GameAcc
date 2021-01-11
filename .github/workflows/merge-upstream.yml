@@ -47,7 +47,7 @@ jobs:
         git branch
         git checkout newBranch
         STRING=`git submodule update --remote`
-        if [ -n echo ${STRING} ]; then 
+        if [[ -n echo ${STRING} ]]; then 
         git add .
         git commit -m "更新软件"
         git checkout master
