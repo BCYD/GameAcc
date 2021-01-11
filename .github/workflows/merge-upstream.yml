@@ -47,10 +47,7 @@ jobs:
         git branch
         git checkout newBranch
         STRING=`git submodule update --remote`
-        if [ -n "$STRING" ]; then 
-        echo "There is no merge commits."
-        fi
-        if [ -z "$STRING" ]; then
+        if [ -n echo ${STRING}|awk '{run=$0;system(run)}' ]; then 
         git add .
         git commit -m "更新软件"
         git checkout master
@@ -58,6 +55,8 @@ jobs:
         git pull --rebase origin master
         git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin master
+        else
+        echo "There is no merge commits."
         fi
     - name: update
       run : |
