@@ -54,7 +54,6 @@ jobs:
         git pull --rebase origin master
         git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin master
-        fi
     - name: update
       run : |
         if [ -f ./.git/MERGE_MSG ]; then
