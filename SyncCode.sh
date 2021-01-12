@@ -1,5 +1,4 @@
 #!/bin/sh
-cd GameAcc
 git submodule foreach git checkout master
 git add .
 git commit -m "更新软件"
