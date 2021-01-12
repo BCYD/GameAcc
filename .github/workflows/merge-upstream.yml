@@ -43,7 +43,7 @@ jobs:
       run : | 
         git clone --recursive https://github.com/BCYD/GameAcc.git
         cd GameAcc
-        sh /SyncCode.sh
+        sh GameAcc/SyncCode.sh
     - name: update
       run : |
         if [ -f ./.git/MERGE_MSG ]; then
