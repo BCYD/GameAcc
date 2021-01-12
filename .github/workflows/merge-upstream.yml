@@ -43,15 +43,9 @@ jobs:
       run : | 
         git clone --recursive https://github.com/BCYD/GameAcc.git
         cd GameAcc
-        git branch newBranch
-        git branch
-        git checkout newBranch
         git submodule foreach git checkout master
         git add .
         git commit -m "更新软件"
-        git checkout master
-        git merge newBranch
-        git pull --rebase origin master
         git remote set-url origin git@github.com:BCYD/GameAcc.git
         git push origin master
     - name: update
